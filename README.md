@@ -8,6 +8,18 @@
      User inactive
    ![video.js skin preview](http://s12.postimg.org/hiaob1rhp/Screenshot_2015_11_17_16_20_15_copy.png)
 
+### Usage
+  1. Place (polyzor-skin.min.css/polyzor-skin.css) after default video.js styles
+  2. Add class  "vjs-polyzor-skin" to video tag
+```html
+
+    <link rel="stylesheet" href="video-js.css">
+    <link rel="stylesheet" href="polyzor-skin.min.css">
+    
+    <video class='video-js vjs-polyzor-skin'></video>
+
+```
+
 ### Settings
 ```scss
 
@@ -28,8 +40,8 @@ $time-color: #fff; //skin default  #fff
 $slider-bg-color: lighten($primary-background-color, 33%);
 
 
-Skin size settings
-----------------------------
+//Skin size settings
+//----------------------------
 //video bar height
 $video-container-height: 5em;
 
