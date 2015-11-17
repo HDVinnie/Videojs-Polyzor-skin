@@ -1,11 +1,11 @@
 ## Video.js Polyzor Skin (for video.js 5)
 	Customizable skin for video.js v.5
-
+[DEMO](http://codepen.io/enygmatik/pen/NGJWRY?editors=010)
 ### Preview
 	 Video js skin
    ![Video.js skin image](http://s12.postimg.org/grhy59p4d/Screenshot_2015_11_17_16_19_53_copy.png)
    
-     User inactive
+   User inactive
    ![video.js skin preview](http://s12.postimg.org/hiaob1rhp/Screenshot_2015_11_17_16_20_15_copy.png)
 
 ### Usage
