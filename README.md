@@ -3,10 +3,10 @@
 
 ### Preview
 	 Video js skin
-   ![Video.js skin image]({{site.baseurl}}/Screenshot 2015-11-17 16.19.53 copy.png)
+   ![Video.js skin image](http://s12.postimg.org/grhy59p4d/Screenshot_2015_11_17_16_19_53_copy.png)
    
      User inactive
-   ![video.js skin preview]({{site.baseurl}}/Screenshot 2015-11-17 16.20.15 copy.png)
+   ![video.js skin preview](http://s12.postimg.org/hiaob1rhp/Screenshot_2015_11_17_16_20_15_copy.png)
 
 ### Settings
 ```css
