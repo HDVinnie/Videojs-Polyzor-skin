@@ -48,7 +48,7 @@ gulp.task('sass', function () {
         browsers: ['last 10 versions'],
         cascade: true
     }))
-    //.pipe(polyzor-skin({outputStyle: 'compressed'}))
+    .pipe(sass({outputStyle: 'compressed'}))
     .pipe(sourcemaps.write('/'))
     //.pipe(browserSync.stream())
     .pipe(gulp.dest('src/css'));
