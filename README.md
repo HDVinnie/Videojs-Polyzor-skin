@@ -10,7 +10,8 @@
 
 ### Usage
   1. Place (polyzor-skin.min.css/polyzor-skin.css) after default video.js styles
-  2. Add class  "vjs-polyzor-skin" to video tag
+  2. Place folder "font" in same root with skin 
+  3. Add class  "vjs-polyzor-skin" to video tag
 ```html
 
     <link rel="stylesheet" href="video-js.css">
