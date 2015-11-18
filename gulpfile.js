@@ -21,7 +21,7 @@ gulp.task('serve', ['sass'], function() {
         server: {
             baseDir: ['src']
         },
-        tunnel: "fwlab", //open external access to this server
+        //tunnel: "fwlab", //open external access to this server
         //host: 'metaform-lab',
         open: "local",
         port: 3000,
@@ -30,8 +30,8 @@ gulp.task('serve', ['sass'], function() {
 
     });
     //set watcher
-    //gulp.watch('src/*.html').on('change', browserSync.reload);
-    //gulp.watch('src/css/*.css').on('change', browserSync.reload);
+    gulp.watch('src/*.html').on('change', browserSync.reload);
+    gulp.watch('src/css/*.css').on('change', browserSync.reload);
 
     gulp.watch(['src/polyzor-skin/**/*.scss'], ['sass']);
 });

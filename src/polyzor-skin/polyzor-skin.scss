@@ -23,7 +23,7 @@
 //Big play button
 //--------------------------------------------
 .vjs-polyzor-skin .vjs-big-play-button {
-    font-size: 5em;
+    font-size: $big-play-size;
     line-height: $big-play-height;
     height: $big-play-height;
     width: $big-play-width;
@@ -172,6 +172,10 @@
 
 //Volume button & menu
 .vjs-polyzor-skin .vjs-volume-menu-button {
+
+    &:hover {
+        width: 10em;
+    }
     position: relative;
     height: $control-buttons-size;
     width: $control-buttons-size;
@@ -185,6 +189,8 @@
     }
     .vjs-menu-content {
         height: $control-buttons-size;
+        padding: 0 5px !important;
+
 
         .vjs-volume-bar {
             margin: 0 !important;
@@ -192,7 +198,6 @@
             transform: translate(0, -50%);
         }
     }
-
 }
 .vjs-polyzor-skin .vjs-volume-level { //volume level indicator
     color: $progress-indicator-color;
