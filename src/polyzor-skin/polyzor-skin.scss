@@ -1,6 +1,6 @@
 //by Polyzor.io
 //Video.js polyzor skin
-//Polyzor Skin v. 0.1.0
+//Polyzor Skin v. 0.2.0
 
 @import "settings";
 
@@ -24,16 +24,17 @@
 //--------------------------------------------
 .vjs-polyzor-skin .vjs-big-play-button {
     font-size: $big-play-size;
-    line-height: $big-play-height;
+    line-height: 1;
     height: $big-play-height;
     width: $big-play-width;
     color: $center-big-play-button-color;
     background: none !important;
     border: 0;
-    transition: color .3s ease !important;
+    transition: all .3s ease !important;
 
     &:hover {
         color: $center-big-play-button-hover-color;
+        transform:scale(1.5);
     }
 
     @if $center-big-play-button {
@@ -48,7 +49,6 @@
         top: 0.5em;
     }
 }
-
 
 
 //VIDEO CONTROL
@@ -66,12 +66,14 @@
     top: 0;
     left: 0;
     margin: 0;
+    padding: 0 !important;
     width: 100% !important;
-    height: auto !important;
+    height: auto !important; //defined by $progress-bar-height
+    transform:translate(0, -100%);
 }
 //Progress indicator
 .vjs-polyzor-skin .vjs-progress-holder {
-    height: .5em !important;
+    height: $progress-bar-height !important;
     margin: 0;
 
     .vjs-load-progress, .vjs-play-progress {
@@ -80,14 +82,9 @@
     }
 
     .vjs-play-progress:before {
+        font-size: $progress-bar-indicator;
         color: $progress-indicator-color;
-        top: -2px;
-    }
-
-    &:hover {
-        .vjs-play-progress:before{
-            top: -4px;
-        }
+        top: -55%;
     }
 }
 //progress indicator state when user is inactive "change this in settings - $show-progress-bar with true or false "
@@ -104,7 +101,6 @@
             transition: all 1s;
         }
         .vjs-progress-control {
-
             visibility: visible;
             opacity: 1;
             top: 100%;
@@ -127,9 +123,12 @@
 //general button settings
 .vjs-polyzor-skin .vjs-control {
     height: auto;
+    width: auto;
+    padding: 0 5px;
 
     &:before {
         font-size: $control-buttons-size;
+        line-height: 1 !important;
     }
 }
 .vjs-polyzor-skin .vjs-control:before {
@@ -138,13 +137,11 @@
 }
 .vjs-polyzor-skin .vjs-control:before,
 .vjs-polyzor-skin .vjs-control:active {
-    //position: relative;
     text-shadow: 0 0 1em $primary-foreground-color !important;
 }
 
 //Play button
 .vjs-polyzor-skin .vjs-play-control {
-
     @if $center-play-button {
         //Align center of bar
         position: absolute;
@@ -165,30 +162,34 @@
     &:before {
         position: relative;
         line-height: 1 !important;
-        font-size: 30px; //for IE
+        font-size: 25px; //for IE
         font-size: $play-button-size !important;
     }
 }
 
 //Volume button & menu
 .vjs-polyzor-skin .vjs-volume-menu-button {
-
-    &:hover {
-        width: 10em;
-    }
     position: relative;
-    height: $control-buttons-size;
-    width: $control-buttons-size;
+    height: $control-buttons-size - .7;
+    width: $control-buttons-size - .7;
+    overflow:hidden;
 
     &:before {
+        text-align: left;
+        font-size: $control-buttons-size - .7 !important;
         position: absolute;
-        width: auto;
-        height: auto;
         top: 50%;
         transform: translate(0, -50%);
     }
+
+    .vjs-menu {
+        position: relative;
+        width: 100%;
+        left: $control-buttons-size / 1.5;
+    }
     .vjs-menu-content {
-        height: $control-buttons-size;
+        position: absolute;
+        height: $control-buttons-size - .7;
         padding: 0 5px !important;
 
 
@@ -217,6 +218,8 @@
 //Live control
 .vjs-polyzor-skin .vjs-live-control {
     position: absolute;
+    width: auto;
+    line-height: 1;
     height: auto;
     top:-30px;
     right: 0;
@@ -231,23 +234,13 @@
         top: 50%;
         background: red;
         border-radius: 100%;
-        transform: translate(-50%, -50%);
+        transform: translate(-100%, -50%);
     }
 }
 
 //Playback Rate button
 .vjs-polyzor-skin .vjs-playback-rate {
     /*TODO: fix playback height*/
-}
-
-//Full screen button
-.vjs-polyzor-skin  .vjs-fullscreen-control {
-    width:auto;
-
-    &:before {
-        font-size: $control-buttons-size + 4 !important;
-        line-height: 1 !important;
-    }
 }
 
 //Divider between time
@@ -290,43 +283,6 @@
     /* Otherwise we'll rely on stacked opacities */
     background: rgba($slider-bg-color, 0.75);
 }
-
-//LOADING
-//.vjs-polyzor-skin .vjs-loading-spinner{
-//    background-color: rgba($primary-foreground-color, .4);
-//    margin: 0;
-//    border: 0 !important;
-//    border-radius: 0;
-//    opacity: 1;
-//    -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
-//    animation: sk-rotateplane 1.2s infinite ease-in-out;
-//
-//    &:after {
-//        display: none !important;
-//    }
-//    &:before {
-//        display: none !important;
-//    }
-//}
-//
-//@-webkit-keyframes sk-rotateplane {
-//    0% { -webkit-transform: perspective(120px) }
-//    50% { -webkit-transform: perspective(120px) rotateY(180deg) }
-//    100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
-//}
-//
-//@keyframes sk-rotateplane {
-//    0% {
-//        transform: perspective(120px) rotateX(0deg) rotateY(0deg);
-//        -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg)
-//    } 50% {
-//          transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
-//          -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg)
-//      } 100% {
-//            transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
-//            -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
-//        }
-//}
 
 //======================
 // MOBILE SCREENS
